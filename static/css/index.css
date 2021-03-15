@@ -1,0 +1,59 @@
+body{
+background-color:gray;
+}
+#form{
+height = 50%;
+background-color : rgb(185, 160, 106);
+margin-top:5%;
+margin-left:25%;
+margin-right:25%;
+font-size: 1.75rem;
+}
+
+#passengerid{
+position : center;
+margin-left:10%;
+}
+#age{
+position : center;
+margin-left:25%;
+}
+#s{
+position : center;
+margin-left:15%;
+}
+#q{
+position : center;
+margin-left:15%;
+}
+#sex{
+position : center;
+margin-left:30%;
+margin-top: 25px;
+}
+#parch{
+position : center;
+margin-top: 25px;
+margin-left:15%;
+}
+#sibsp{
+position : center;
+margin-top: 25px;
+margin-left:30%;
+}
+
+#pclass{
+margin-left:15%;
+}
+#div1{
+margin-top:75px;
+}
+#div2{
+margin-top:75px;
+}
+#div3{
+margin-top:75px;
+}
+button{
+margin-left:45%;
+}
