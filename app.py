@@ -5,7 +5,7 @@ import pandas as pd
 
 img_folder = os.path.join('static', 'images')
 app = Flask(__name__)
-model = pickle.load(open('D:\\py\\titanic.sav', 'rb'))
+model = pickle.load(open('titanic.sav', 'rb'))
 app.config['img_folder'] = img_folder
 
 
