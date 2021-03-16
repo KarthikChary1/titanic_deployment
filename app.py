@@ -2,11 +2,13 @@ from flask import Flask, request, jsonify, render_template
 import os
 import pickle
 import numpy as np
+import pandas as pd
 
 img_folder = os.path.join('static', 'images')
 app = Flask(__name__)
 model = pickle.load(open('D:\\py\\titanic.sav', 'rb'))
 app.config['img_folder'] = img_folder
+
 
 @app.route('/')
 def home():
@@ -19,7 +21,9 @@ def predict():
     For rendering results on HTML GUI
     '''
     int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
+    final_features = pd.DataFrame(int_features, index=['PassengerId', 'Pclass','Age','SibSp','Parch', 'Sex_male', 'Embarked_Q', 'Embarked_S'])
+    final_features = final_features.transpose()
+    print(final_features)
     prediction = model.predict(final_features)
 
     if int(prediction) == 0:
