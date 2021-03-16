@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import os
 import pickle
-import numpy as np
 import pandas as pd
 
 img_folder = os.path.join('static', 'images')
@@ -23,7 +22,6 @@ def predict():
     int_features = [int(x) for x in request.form.values()]
     final_features = pd.DataFrame(int_features, index=['PassengerId', 'Pclass','Age','SibSp','Parch', 'Sex_male', 'Embarked_Q', 'Embarked_S'])
     final_features = final_features.transpose()
-    print(final_features)
     prediction = model.predict(final_features)
 
     if int(prediction) == 0:
